@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 
@@ -79,11 +81,45 @@ public class Arithmetic {
 					System.out.print("Min:"+b+"\t");
 				}				
 	}
+	
+	/**
+	 * 分解质因数
+	 * 例如：8=2*2*2
+	 * @param args
+	 */
+	public static void resolveNum(int num){
+		 
+		
+	}
+	
+	/**
+	 * 冒泡算法
+	 * 有n个数，进行(n-1)轮，第一轮：调换(n-1)次,第二轮:(n-2)次......,第n轮:(n-i)次
+	 * @param args
+	 */
+	public static void PopPop(){
+		int[]nums={9,8,7,6,5,4,3,2,1};
+		int length=nums.length;
+		for(int i=1;i<=length;i++){
+			for(int j=1;j<=length-i;j++){
+				if(nums[j-1]>nums[j]){
+					int temp=nums[j-1];
+					nums[j-1]=nums[j];
+					nums[j]=temp;
+				}
+			}
+		}
+		for(int i=0;i<length;i++){
+			System.out.print(nums[i]+"\t");
+		}
+		
+	}
+	
 	public static void main(String[] args) {
 		/*Scanner input=new Scanner(System.in);
 		System.out.print("請輸入天數：");
 		monkeyEatPeach(input.nextInt());*/
-		changeNum(5,6);
+		PopPop();
 		
 		
 	}
