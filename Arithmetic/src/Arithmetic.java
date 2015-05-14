@@ -88,6 +88,16 @@ public class Arithmetic {
 	 * @param args
 	 */
 	public static void resolveNum(int num){
+		 int temp=num;//临时变量temp，用来保存整除下来的商
+		 for(int i=2;i<temp;i++){			 
+			 while(temp%i==0){
+				 temp=temp/i;//能被整除，则继续while内循环;否则把temp放到for外循环
+				 System.out.print(i+"\t");
+			 }			 
+		 }
+		 if(temp!=1){//打印最后一个整除下来的商
+			 System.out.print(temp); 
+		 }
 		 
 		
 	}
@@ -115,11 +125,42 @@ public class Arithmetic {
 		
 	}
 	
+	/**
+	 * 选择排序法
+	 * @param args
+	 */
+	public static void selectNum(){
+		int[]nums={9,7,8,5,6,3,4,2,1};
+		//外层交换位置
+		for(int i=0;i<nums.length;i++){
+			int min=nums[i];
+			int index=i;
+			int temp=nums[i];
+			//内层找出最小数
+			for(int j=i+1;j<nums.length;j++){
+				if(min>nums[j]){
+					min=nums[j];
+					index=j;
+				}				
+			}
+			//
+			if(index!=i){
+				nums[i]=min;
+				nums[index]=temp;
+			}			
+		}
+	
+		for(int i=0;i<nums.length;i++){
+			System.out.print(nums[i]+"\t");
+		}
+	}
+	
 	public static void main(String[] args) {
 		/*Scanner input=new Scanner(System.in);
 		System.out.print("請輸入天數：");
 		monkeyEatPeach(input.nextInt());*/
-		PopPop();
+		//resolveNum(100);
+		selectNum();
 		
 		
 	}
