@@ -155,12 +155,36 @@ public class Arithmetic {
 		}
 	}
 	
+	/**
+	 * 插入排序法
+	 * n个数，进行(n-1)轮，第1轮:比较1次，第2轮:比较2次......第i轮：比较i次
+	 * @param args
+	 */
+	public static void insertNum(){
+		int[]nums={9,8,7,6,5,4,3,2,1};
+		for(int i=0;i<nums.length-1;i++){
+			for(int j=0;j<i+1;j++){
+				//比较,拿外循环的第(i+1)个数，与内循环的各个数时行比较
+				if(nums[i+1]<nums[j]){
+					int temp=nums[i+1];
+					nums[i+1]=nums[j];
+					nums[j]=temp;
+				}
+			}
+		}
+		for(int i=0;i<nums.length;i++){
+			System.out.print(nums[i]+"\t");
+		}
+		
+	}
+	
 	public static void main(String[] args) {
 		/*Scanner input=new Scanner(System.in);
 		System.out.print("請輸入天數：");
 		monkeyEatPeach(input.nextInt());*/
 		//resolveNum(100);
-		selectNum();
+		//selectNum();
+		insertNum();
 		
 		
 	}
