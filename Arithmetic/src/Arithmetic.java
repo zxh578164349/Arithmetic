@@ -160,7 +160,10 @@ public class Arithmetic {
 		System.out.print("請輸入天數：");
 		monkeyEatPeach(input.nextInt());*/
 		//resolveNum(100);
-		selectNum();
+		//selectNum();
+		String temp=".Jpg";
+		String temp2=temp.toLowerCase();
+		System.out.print(temp2);
 		
 		
 	}
