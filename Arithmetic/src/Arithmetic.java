@@ -164,7 +164,7 @@ public class Arithmetic {
 		int[]nums={9,8,7,6,5,4,3,2,1};
 		for(int i=0;i<nums.length-1;i++){
 			for(int j=0;j<i+1;j++){
-				//比较,拿外循环的第(i+1)个数，与内循环的各个数时行比较
+				//比较时,拿外循环的第(i+1)个数，与内循环的各个数时行比较
 				if(nums[i+1]<nums[j]){
 					int temp=nums[i+1];
 					nums[i+1]=nums[j];
@@ -178,13 +178,32 @@ public class Arithmetic {
 		
 	}
 	
+	/**
+	 *汉诺塔
+	 *(1)借助C,把(n-1)个盘从A移动到B;(2)把第n个盘(最大一个盘)移动到C；(3)借助A，把剩余的(n-1)从B移动到C
+	 * @param args
+	 */
+	static int index=0;
+	public static int hanNuo(int num,String A,String B,String C){
+		if(num==1){
+			index++;
+			//System.out.println(A+"---"+C);
+		}else{
+			hanNuo(num-1,A,C,B);
+			hanNuo(1,A,B,C);
+			hanNuo(num-1,B,A,C);
+		}
+		return index;
+	}
+	
 	public static void main(String[] args) {
 		/*Scanner input=new Scanner(System.in);
 		System.out.print("請輸入天數：");
 		monkeyEatPeach(input.nextInt());*/
 		//resolveNum(100);
 		//selectNum();
-		insertNum();
+		//insertNum();
+		System.out.print(hanNuo(40,"A","B","C"));
 		
 		
 	}
