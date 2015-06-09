@@ -196,6 +196,21 @@ public class Arithmetic {
 		return index;
 	}
 	
+	/**
+	 * 水仙花数
+	 * 例如：153=1^3+5^3+3^3
+	 * (1)算出每个数长度(2)找出每一位的数字
+	 * @param args
+	 */
+	public static void waterFlower(int num){
+		int i=1;
+		while(num>9){
+			num/=10;
+			i++;
+		}
+		
+	}
+	
 	public static void main(String[] args) {
 		/*Scanner input=new Scanner(System.in);
 		System.out.print("請輸入天數：");
